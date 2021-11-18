@@ -17,6 +17,7 @@ namespace XPathParserTest
         }
 
         // Expressions from http://www.w3.org/TR/xpath#location-paths
+        [InlineData(@"count(distinct-values(//p:sldId/@:id)) = count(//p:sldId/@:id)")]
         [InlineData(@"child::para")]
         [InlineData(@"child::*")]
         [InlineData(@"child::text()")]

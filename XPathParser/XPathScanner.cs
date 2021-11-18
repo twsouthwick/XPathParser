@@ -191,15 +191,6 @@ namespace CodePlex.XPathParser {
                     kind = LexKind.Dot;
                 }
                 break;
-            case ':':
-                NextChar();
-                if (curChar == ':') {
-                    kind = LexKind.ColonColon;
-                    NextChar();
-                } else {
-                    kind = LexKind.Unknown;
-                }
-                break;
             case '*':
                 kind = LexKind.Star;
                 NextChar();
@@ -268,6 +259,19 @@ namespace CodePlex.XPathParser {
                 kind = LexKind.Number;
                 ScanNumber();
                 break;
+            case ':':
+                NextChar();
+                if (curChar == ':')
+                {
+                    kind = LexKind.ColonColon;
+                    NextChar();
+                    break;
+                }
+                else
+                {
+                    goto case char.MaxValue;
+                }
+            case char.MaxValue:
             default:
                 this.name = ScanNCName();
                 if (this.name != null) {
