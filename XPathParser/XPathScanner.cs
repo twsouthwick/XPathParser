@@ -433,6 +433,10 @@ namespace CodePlex.XPathParser {
                     NextChar();
                 }
             }
+            else if (curChar =='f')
+            {
+                NextChar();
+            }
         }
 
         private void ScanString() {

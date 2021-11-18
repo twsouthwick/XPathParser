@@ -47,6 +47,7 @@ namespace XPathParserTest
         [InlineData(@"3e8")]
         [InlineData(@"3.5e8")]
         [InlineData(@"-3.5e8")]
+        [InlineData(@"5f")]
         [InlineData(@"child::para[position()=5][attribute::type=""warning""]")]
         [InlineData(@"child::chapter[child::title='Introduction']")]
         [InlineData(@"child::chapter[child::title]")]
